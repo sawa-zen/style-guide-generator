@@ -1,0 +1,18 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "globals": {
+    "window": true
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "quote-props": 0,
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": 0,
+    "no-unused-expressions": 0,
+    "global-require": 0,
+    "react/no-children-prop": 0,
+  }
+}
