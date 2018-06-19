@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Button } from '../../components';
-import { COLORS } from '../../components/style';
+import { colors } from '../../components/styles';
 
 const Home = () => (
   <Wrapper>
@@ -24,7 +24,7 @@ const Main = styled.main`
   align-items: center;
   justify-content: center;
   height: 480px;
-  color: ${COLORS.YUKI};
+  color: ${colors.yuki};
   background: linear-gradient(to bottom, #c44ce6 0%,#b620e0 100%);
 `;
 

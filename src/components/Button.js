@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components/primitives';
-import { COLORS } from '../components/style';
+import { colors } from './styles';
 
 const Button = ({ label, ...rest }) => (
   <Wrapper>
@@ -16,11 +16,11 @@ const Wrapper = styled.View`
   width: 120px;
   height: 32px;
   border-radius: 3px;
-  background-color: ${COLORS.SECONDARY};
+  background-color: ${colors.secondary};
 `;
 
 const Label = styled.Text`
-  color: ${COLORS.YUKI};
+  color: ${colors.yuki};
 `;
 
 export default Button;
