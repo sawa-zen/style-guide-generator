@@ -1,45 +1,36 @@
 import * as React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
-import { AppRegistry } from 'react-native-web'
+import { ServerStyleSheet, injectGlobal } from 'styled-components'
 
-let index = 0
-
-// Force Next-generated DOM elements to fill their parent's height.
-// Not required for using of react-native-web, but helps normalize
-// layout for top-level wrapping elements.
-const normalizeNextElements = `
-  body > div:first-child,
-  #__next {
-    height: 100%;
+injectGlobal`
+  html, body {
+    margin: 0;
+    padding: 0;
   }
-`
+`;
 
-export default class MyDocument extends Document {
-  static async getInitialProps ({ renderPage }) {
-    AppRegistry.registerComponent('Main', () => Main)
-    const { getStyleElement } = AppRegistry.getApplication('Main')
-    const page = renderPage()
-    const styles = [
-      <style
-        key={index++}
-        dangerouslySetInnerHTML={{ __html: normalizeNextElements }}
-      />,
-      getStyleElement()
-    ]
-    return { ...page, styles }
-  }
-
+class MyDocument extends Document {
   render () {
+    const sheet = new ServerStyleSheet()
+    const main = sheet.collectStyles(<Main />)
+    const styleTags = sheet.getStyleElement()
+
     return (
-      <html style={{ height: '100%', width: '100%' }}>
+      <html>
         <Head>
-          <title>react-native-web</title>
+          <title>osilis</title>
+          <link rel='icon' href='/static/favicon.png' />
+          {styleTags}
         </Head>
-        <body style={{ height: '100%', width: '100%', overflowY: 'scroll' }}>
-          <Main />
+        <body>
+          <div className='root'>
+            {main}
+          </div>
           <NextScript />
         </body>
       </html>
     )
   }
 }
+
+export default MyDocument;
