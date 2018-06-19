@@ -1,0 +1,9 @@
+export const COLORS = {
+  PRIMARY: '#B620E0',
+  SECONDARY: '#FD9800',
+  SUMI: '#333333',
+  KATANA: '#666666',
+  KEMURI: '#999999',
+  KASUMI: '#F4F4F4',
+  YUKI: '#FFFFFF',
+};
