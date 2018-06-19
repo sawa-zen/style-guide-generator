@@ -1,28 +1,35 @@
-import * as React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import * as React from 'react'
+import Document, { Head, Main, NextScript } from 'next/document'
+import { ServerStyleSheet, injectGlobal } from 'styled-components'
+
+injectGlobal`
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet();
-    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
-    const styleTags = sheet.getStyleElement();
-    return { ...page, styleTags };
-  }
+  render () {
+    const sheet = new ServerStyleSheet()
+    const main = sheet.collectStyles(<Main />)
+    const styleTags = sheet.getStyleElement()
 
-  render() {
     return (
-      <html lang="en">
+      <html>
         <Head>
-          <title>My page</title>
-          {this.props.styleTags}
+          <title>osilis</title>
+          <link rel='icon' href='/static/favicon.png' />
+          {styleTags}
         </Head>
         <body>
-          <Main />
+          <div className='root'>
+            {main}
+          </div>
           <NextScript />
         </body>
       </html>
-    );
+    )
   }
 }
 
