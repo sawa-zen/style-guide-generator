@@ -1,22 +1,26 @@
 import * as React from 'react';
-import { View } from 'react-primitives';
-import styled from 'styled-components';
+import styled from 'styled-components/primitives';
+import { COLORS } from '../components/style';
 
 const Button = ({ label, ...rest }) => (
   <Wrapper>
     <Label>{ label }</Label>
-    <View>
-    </View>
   </Wrapper>
 );
 
-const Wrapper = styled.div`
-  height: 48px;
+const Wrapper = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 32px;
   border-radius: 3px;
-  background-color: red;
+  background-color: ${COLORS.SECONDARY};
 `;
 
-const Label = styled.div`
+const Label = styled.Text`
+  color: ${COLORS.YUKI};
 `;
 
 export default Button;
