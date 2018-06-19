@@ -8,7 +8,7 @@ export const colors = {
   yuki: '#ffffff',
 };
 
-export const textStyle = {
+export const textStyles = {
   display7: { size: 65, weight: 'bold' },
   display6: { size: 45, weight: 'bold' },
   display5: { size: 35, weight: 'bold' },

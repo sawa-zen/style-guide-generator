@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components/primitives';
+import Text from './Text';
 import { colors } from './styles';
 
 const Button = ({ label, ...rest }) => (
@@ -19,7 +20,9 @@ const Wrapper = styled.View`
   background-color: ${colors.secondary};
 `;
 
-const Label = styled.Text`
+const Label = styled(Text).attrs({
+  variant: 'body'
+})`
   color: ${colors.yuki};
 `;
 
