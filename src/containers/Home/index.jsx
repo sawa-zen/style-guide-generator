@@ -1,8 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Button } from '../../components';
 
 const Home = () => (
-  <Wrapper>Style Guide Generator</Wrapper>
+  <Wrapper>
+    <Button label="test" />
+    Style Guide Generator
+  </Wrapper>
 );
 
 const Wrapper = styled.div`
