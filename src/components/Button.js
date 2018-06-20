@@ -3,8 +3,11 @@ import styled from 'styled-components/primitives';
 import Text from './Text';
 import { colors } from './styles';
 
-const Button = ({ label, ...rest }) => (
-  <Wrapper>
+const Button = ({ label, onClick, ...rest }) => (
+  <Wrapper
+    accessibilityRole="button"
+    onClick={onClick}
+  >
     <Label>{ label }</Label>
   </Wrapper>
 );

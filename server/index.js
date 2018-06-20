@@ -1,37 +1,29 @@
-const path = require('path');
-const express = require('express');
-const compression = require('compression');
-const next = require('next');
+const express = require('express')
+const next = require('next')
 
-const routes = require('../routes');
+const port = parseInt(process.env.PORT, 10) || 3000
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
 
-const port = parseInt(process.env.PORT, 10) || 3100;
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
+app.prepare()
+  .then(() => {
+    const server = express()
 
-const handler = routes.getRequestHandler(app);
+    server.get('/', (req, res) => {
+      return app.render(req, res, '/', req.query)
+    })
 
-app.prepare().then(() => {
-  const server = express();
+    server.get('/editor', (req, res) => {
+      return app.render(req, res, '/editor', req.query)
+    })
 
-  server.use(compression());
+    server.get('*', (req, res) => {
+      return handle(req, res)
+    })
 
-  const staticPath = path.join(__dirname, '../static');
-  server.use(
-    '/static',
-    express.static(staticPath, {
-      maxAge: '30d',
-      immutable: true,
-    }),
-  );
-
-  server.get('*', (req, res) => handler(req, res));
-
-  function startServer() {
-    server.listen(port, () => {
-      console.log(`> Ready on http://localhost:${port}`);
-    });
-  }
-
-  startServer();
-});
+    server.listen(port, (err) => {
+      if (err) throw err
+      console.log(`> Ready on http://localhost:${port}`)
+    })
+  })

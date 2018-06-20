@@ -1,12 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Button } from '../../components';
+import { Button, Text } from '../../components';
 import { colors } from '../../components/styles';
 
 const Home = () => (
   <Wrapper>
     <Main>
-      Style Guide Generator
+      <Title variant="display5" >Style Guide Generator</Title>
       <Button label="Create" />
     </Main>
   </Wrapper>
@@ -15,7 +15,8 @@ const Home = () => (
 const Wrapper = styled.div`
 `;
 
-const Title = styled.h1`
+const Title = styled(Text)`
+  margin-bottom: 16px;
 `;
 
 const Main = styled.main`
@@ -23,7 +24,7 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 480px;
+  height: 100vh;
   color: ${colors.yuki};
   background: linear-gradient(to bottom, #c44ce6 0%,#b620e0 100%);
 `;
