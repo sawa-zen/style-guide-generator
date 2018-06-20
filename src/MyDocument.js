@@ -18,7 +18,7 @@ class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>osilis</title>
+          <title>Style Guide Generator</title>
           <link rel='icon' href='/static/favicon.png' />
           {styleTags}
         </Head>
