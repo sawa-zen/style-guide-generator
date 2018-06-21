@@ -3,21 +3,19 @@ import styled from 'styled-components/primitives';
 import { Section, ColorSample } from '../components';
 import { colors } from '../components/styles';
 
-const ColorSection = ({ ...rest }) => (
-  <Section title="Colors" {...rest} >
-    <List>
-      {
-        Object.keys(colors).map((key) => (
-          <StyledColorSample
-            key={key}
-            variant={key}
-            title={key}
-            code={colors[key]}
-          />
-        ))
-      }
-    </List>
-  </Section>
+const ColorList = ({ ...rest }) => (
+  <List>
+    {
+      Object.keys(colors).map((key) => (
+        <StyledColorSample
+          key={key}
+          variant={key}
+          title={key}
+          code={colors[key]}
+        />
+      ))
+    }
+  </List>
 );
 
 const List = styled.View`
@@ -33,4 +31,4 @@ const StyledColorSample = styled(ColorSample)`
   margin-bottom: 16px;
 `;
 
-export default ColorSection;
+export default ColorList;
