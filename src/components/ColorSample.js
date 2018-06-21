@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { View } from 'react-primitives';
 import styled from 'styled-components/primitives';
-import { Text } from './';
+import Text from './Text';
 import { colors } from '../components/styles';
 
-const ColorSample = ({ title, code, ...rest }) => (
-  <Wrapper {...rest}>
+const ColorSample = ({ title, code, style, ...rest }) => (
+  <Wrapper style={style} >
     <Circle code={code} />
     <Body>
       <Title>{ title }</Title>
@@ -24,9 +23,7 @@ const Wrapper = styled.View`
   border-radius: 5px;
 `;
 
-const Circle = styled(({ code, ...rest}) => (
-  <View style={rest.style} />
-))`
+const Circle = styled.View`
   width: 48px;
   height: 48px;
   background-color: ${(props) => props.code};

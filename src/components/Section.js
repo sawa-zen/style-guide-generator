@@ -1,14 +1,15 @@
 import * as React from 'react';
 import styled from 'styled-components/primitives';
+import { View } from 'react-primitives';
 import Text from './Text';
 import { colors } from './styles';
 
 const Section = ({ title, children, ...rest }) => (
   <Wrapper {...rest}>
     <Title>{ title }</Title>
-    <Body>
+    <View>
       { children }
-    </Body>
+    </View>
   </Wrapper>
 );
 
@@ -24,7 +25,5 @@ const Title = Text.extend.attrs({
   color: ${colors.katana};
   margin-bottom: 16px;
 `;
-
-const Body = styled.View``;
 
 export default Section;

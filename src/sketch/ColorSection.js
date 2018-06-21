@@ -3,8 +3,8 @@ import styled from 'styled-components/primitives';
 import { Section, ColorSample } from '../components';
 import { colors } from '../components/styles';
 
-const ColorSection = () => (
-  <Wrapper title="Colors">
+const ColorSection = ({ ...rest }) => (
+  <Section title="Colors" {...rest} >
     <List>
       {
         Object.keys(colors).map((key) => (
@@ -17,12 +17,8 @@ const ColorSection = () => (
         ))
       }
     </List>
-  </Wrapper>
+  </Section>
 );
-
-const Wrapper = styled(Section)`
-  width: 100%;
-`;
 
 const List = styled.View`
   display: flex;
