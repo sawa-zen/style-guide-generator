@@ -6,7 +6,9 @@ import { Text, Button } from '../../components';
 const Header = ({ ...rest }) => (
   <Wrapper { ...rest }>
     <Title>Style Guide Generator</Title>
-    <Button label="Export" />
+    <Link href="/export">
+      <Button label="Export" />
+    </Link>
   </Wrapper>
 );
 
@@ -24,6 +26,10 @@ const Title = styled(Text).attrs({
 })`
   flex-grow: 1;
   color: ${colors.yuki};
+`;
+
+const Link = styled.a`
+  text-decoration: none;
 `;
 
 export default Header;
