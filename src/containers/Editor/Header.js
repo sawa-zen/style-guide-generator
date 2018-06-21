@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   height: 48px;
-  background-color: ${colors.katana};
+  background-color: ${colors.primary};
 `;
 
 const Title = styled(Text).attrs({

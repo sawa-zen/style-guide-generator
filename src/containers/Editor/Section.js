@@ -13,8 +13,9 @@ const Section = ({ title, children, ...rest }) => (
 );
 
 const Wrapper = styled.div`
-  padding: 24px;
+  padding: 48px;
   background-color: ${colors.yuki};
+  border-radius: 5px;
 `;
 
 const Title = styled(Text).attrs({
