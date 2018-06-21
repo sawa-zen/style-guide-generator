@@ -6,7 +6,7 @@
     "skpm:build": "BABEL_ENV=skpm skpm-build",
     "skpm:watch": "BABEL_ENV=skpm skpm-build --watch",
     "skpm:start": "BABEL_ENV=skpm skpm-build --watch --run",
-    "skpm:link":  "npm run skpm:build && skpm-link",
+    "skpm:link": "npm run skpm:build && skpm-link",
     "prestart": "npm run build"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "@skpm/extract-loader": "^2.0.2",
     "express": "^4.16.3",
     "next": "^5.1.0",
+    "node-zip": "^1.1.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-native-web": "^0.4.0",
