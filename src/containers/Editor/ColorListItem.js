@@ -13,10 +13,7 @@ const ColorListItem = ({ title, code, ...rest }) => (
 );
 
 const Wrapper = styled.li`
-  border: 1px solid ${colors.kemuri};
   list-style: none;
-  padding: 16px;
-  border-radius: 5px;
 `;
 
 export default ColorListItem;

@@ -17,6 +17,11 @@ const ColorSample = ({ title, code, ...rest }) => (
 const Wrapper = styled.View`
   display: flex;
   flex-direction: row;
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${colors.kemuri};
+  padding: 16px;
+  border-radius: 5px;
 `;
 
 const Circle = styled(({ code, ...rest}) => (
@@ -38,12 +43,10 @@ const Body = styled.View`
   justify-content: center;
 `;
 
-const Title = styled(Text).attrs({
+const Title = Text.extend.attrs({
   variant: 'display3'
-})`
-`;
+})``;
 
-const Code = styled(Text)`
-`;
+const Code = Text.extend``;
 
 export default ColorSample;

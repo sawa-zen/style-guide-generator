@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Section } from '../../components';
 import { colors } from '../../components/styles';
 import Header from './Header';
-import Section from './Section';
 import ColorList from './ColorList';
 import TextList from './TextList';
 

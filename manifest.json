@@ -1,0 +1,18 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "sync styleguide",
+      "identifier": "sync_styleguide",
+      "script": "./src/sketch/index.js"
+    }
+  ],
+  "menu": {
+    "title": "styleguide",
+    "items": [
+      "sync_styleguide"
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { Text } from '../../components';
-import { colors } from '../../components/styles';
+import styled from 'styled-components/primitives';
+import Text from './Text';
+import { colors } from './styles';
 
 const Section = ({ title, children, ...rest }) => (
   <Wrapper {...rest}>
@@ -12,19 +12,19 @@ const Section = ({ title, children, ...rest }) => (
   </Wrapper>
 );
 
-const Wrapper = styled.div`
+const Wrapper = styled.View`
   padding: 48px;
   background-color: ${colors.yuki};
   border-radius: 5px;
 `;
 
-const Title = styled(Text).attrs({
+const Title = Text.extend.attrs({
   variant: 'display5'
 })`
   color: ${colors.katana};
+  margin-bottom: 16px;
 `;
 
-const Body = styled.div`
-`;
+const Body = styled.View``;
 
 export default Section;

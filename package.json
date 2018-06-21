@@ -1,11 +1,17 @@
 {
   "scripts": {
-    "dev": "node ./server/index.js",
-    "build": "next build",
-    "start": "NODE_ENV=production node ./server/index.js",
+    "dev": "BABEL_ENV=next node ./server.js",
+    "build": "BABEL_ENV=next next build",
+    "start": "BABEL_ENV=next NODE_ENV=production node ./server.js",
+    "skpm:build": "BABEL_ENV=skpm skpm-build",
+    "skpm:watch": "BABEL_ENV=skpm skpm-build --watch",
+    "skpm:start": "BABEL_ENV=skpm skpm-build --watch --run",
+    "skpm:link":  "npm run skpm:build && skpm-link",
     "prestart": "npm run build"
   },
   "dependencies": {
+    "@skpm/builder": "^0.5.7",
+    "@skpm/extract-loader": "^2.0.2",
     "express": "^4.16.3",
     "next": "^5.1.0",
     "react": "^16.0.0",
@@ -13,11 +19,23 @@
     "react-native-web": "^0.4.0",
     "react-primitives": "^0.5.1",
     "react-redux": "^5.0.7",
+    "react-sketchapp": "^2.0.0",
+    "react-test-renderer": "^16.4.1",
     "redux": "^4.0.0",
     "styled-components": "^3.3.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/preset-react": "^7.0.0-beta.51",
     "babel-plugin-react-native-web": "^0.4.0",
     "babel-plugin-styled-components": "^1.5.1"
+  },
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "styleguide",
+    "manifest": "manifest.json",
+    "main": "styleguide.sketchplugin"
   }
 }

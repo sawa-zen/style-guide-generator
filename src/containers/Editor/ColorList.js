@@ -18,6 +18,7 @@ const ColorList = ({ ...rest }) => (
 );
 
 const Wrapper = styled.ul`
+  margin: 0;
   padding: 0;
   display: grid;
   grid-gap: 16px;
