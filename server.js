@@ -3,7 +3,6 @@ const next = require('next')
 const fs = require('fs')
 const zipFolder = require('zip-folder');
 const { exec, execSync } = require('child_process');
-const archiver = require('archiver');
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
