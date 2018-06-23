@@ -1,7 +1,8 @@
 const express = require('express')
 const next = require('next')
 const fs = require('fs')
-const zipFolder = require('zip-folder');
+const archiver = require('archiver');
+
 const { exec, execSync } = require('child_process');
 
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -29,14 +30,20 @@ app.prepare()
         execSync('mkdir dist');
         execSync('mv ./styleguide.sketchplugin ./dist');
 
-        zipFolder('./dist', './styleguide.sketchplugin.zip', function(err) {
-          if(err) {
-            console.log('oh no!', err);
-          } else {
-            var file = `${__dirname}/styleguide.sketchplugin.zip`;
-            res.download(file);
-          }
+        // create a file to stream archive data to.
+        var output = fs.createWriteStream(__dirname + '/styleguide.sketchplugin.zip');
+        var archive = archiver('zip', {
+          zlib: { level: 9 } // Sets the compression level.
         });
+
+        output.on('close', function() {
+          var file = `${__dirname}/styleguide.sketchplugin.zip`;
+          res.download(file);
+        });
+
+        archive.pipe(output);
+        archive.directory('dist/', false);
+        archive.finalize();
       });
     })
 
