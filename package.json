@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "BABEL_ENV=next nodemon ./server.js",
+    "dev": "BABEL_ENV=next nodemon ./server.js --watch ./server.js",
     "build": "BABEL_ENV=next next build",
     "start": "BABEL_ENV=next NODE_ENV=production node ./server.js",
     "skpm:build": "BABEL_ENV=skpm skpm-build",
