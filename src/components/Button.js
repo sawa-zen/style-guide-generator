@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-primitives';
 import styled from 'styled-components/primitives';
 import Text from './Text';
 import { colors } from './styles';
@@ -12,7 +13,7 @@ const Button = ({ label, onClick, ...rest }) => (
   </Wrapper>
 );
 
-const Wrapper = styled.View`
+const Wrapper = styled(View)`
   display: flex;
   flex-direction: row;
   align-items: center;

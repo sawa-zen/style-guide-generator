@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Text as BaseText } from 'react-primitives';
 import styled, { css } from 'styled-components/primitives';
 import { textStyles } from './styles';
 
@@ -10,7 +11,7 @@ const getTextStyle = (variant) => {
   `;
 }
 
-const Text = styled.Text`
+const Text = styled(BaseText)`
   ${props => getTextStyle(props.variant)}
 `;
 

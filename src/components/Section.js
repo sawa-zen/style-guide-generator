@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styled from 'styled-components/primitives';
 import { View } from 'react-primitives';
+import styled from 'styled-components/primitives';
 import Text from './Text';
 import { colors } from './styles';
 
@@ -13,7 +13,7 @@ const Section = ({ title, children, ...rest }) => (
   </Wrapper>
 );
 
-const Wrapper = styled.View`
+const Wrapper = styled(View)`
   padding: 48px;
   background-color: ${colors.yuki};
   border-radius: 5px;

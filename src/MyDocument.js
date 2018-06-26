@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet, css } from 'styled-components'
+import { AppRegistry } from 'react-native-web'
 
 class MyDocument extends Document {
 
@@ -9,7 +10,13 @@ class MyDocument extends Document {
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
     const styleTags = sheet.getStyleElement()
 
-    return { ...page, styleTags } // return styles collected
+    AppRegistry.registerComponent('Main', () => Main)
+    const { getStyleElement } = AppRegistry.getApplication('Main')
+    const styles = [
+      getStyleElement()
+    ]
+
+    return { ...page, styleTags, styles } // return styles collected
   }
 
   render() {

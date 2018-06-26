@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-primitives';
 import styled from 'styled-components/primitives';
 import Text from './Text';
 
@@ -11,7 +12,7 @@ const TextSample = ({ variant, size, weight, ...rest }) => (
   </Wrapper>
 );
 
-const Wrapper = styled.View`
+const Wrapper = styled(View)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,7 +25,7 @@ const Variant = styled(Text).attrs({
   width: 100px;
 `;
 
-const Sample = styled.Text`
+const Sample = styled(Text)`
   font-size: ${props => props.size}px;
   font-weight: ${props => props.weight};
 `;
