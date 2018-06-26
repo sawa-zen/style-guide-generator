@@ -18,7 +18,6 @@
     "next": "^6.0.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-native-web": "^0.8.4",
     "react-primitives": "^0.6.0",
     "react-redux": "^5.0.7",
     "react-sketchapp": "^2.0.0",
